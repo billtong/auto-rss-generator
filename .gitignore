@@ -4,3 +4,6 @@
 # output
 slack_devops_channel_rss.xml
 /__pucache__/
+*.log
+geckodriver.log
+*.pyc
