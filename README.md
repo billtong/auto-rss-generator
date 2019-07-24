@@ -12,7 +12,6 @@ this is a loop (from first one)
 pip3 install --trusted-host pypi.org --trusted-host files.pythonhosted.org Django
 python3 server/manage.py runserver
 ```
-
-#API
+# API
 - GET(rss/) ? url="the slack channel url"
-    - example - http://127.0.0.1:8000/rss/?url=https://app.slack.com/client/TBKNBP9UJ/CLHLX1G3S/  
+    - example - `http://127.0.0.1:8000/rss/?url=https://app.slack.com/client/TBKNBP9UJ/CLHLX1G3S/`  
