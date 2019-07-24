@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <title>Notification Channel</title>
-    <link href="https://app.slack.com/client/TBKNBP9UJ/CC6NQTXEZ" rel="alternate" type="text/html" />
-    <author>
-        <name>ceadevops</name>
-    </author>
-    <id>urn:uuid:903deee0-7bfa-11db-9fe1-0800200c9a66</id>
-<updated>2019-07-22T21:27:10</updated><entry><title>help</title><link href="https://mjh-cdn-technology.slack.com/archives/CLHLX1G3S/p1563830830000700" rel="alternate" type="text/html" /><id>p1563830830000700</id><published>2019-07-22T21:27:10</published></entry><entry><title>channels:read</title><link href="https://mjh-cdn-technology.slack.com/archives/CLHLX1G3S/p1563830718000400" rel="alternate" type="text/html" /><id>p1563830718000400</id><published>2019-07-22T21:25:18</published></entry><entry><title>@/feed</title><link href="https://mjh-cdn-technology.slack.com/archives/CLHLX1G3S/p1563547357000400" rel="alternate" type="text/html" /><id>p1563547357000400</id><published>2019-07-19T14:42:37</published></entry><entry><title>joined #devops-notification.</title><link href="https://mjh-cdn-technology.slack.com/archives/CLHLX1G3S/p1563482308000200" rel="alternate" type="text/html" /><id>p1563482308000200</id><published>2019-07-18T20:38:28</published></entry><entry><title>set the channel purpose: do testing for Zhiyuan Tong</title><link href="https://mjh-cdn-technology.slack.com/archives/CLHLX1G3S/p1563387883000300" rel="alternate" type="text/html" /><id>p1563387883000300</id><published>2019-07-17T18:24:43</published></entry></feed>
