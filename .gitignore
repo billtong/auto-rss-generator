@@ -7,3 +7,4 @@ slack_devops_channel_rss.xml
 *.log
 geckodriver.log
 *.pyc
+server/geckodriver.log
