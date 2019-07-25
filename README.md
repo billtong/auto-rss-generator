@@ -8,8 +8,10 @@ this is a loop (from first one)
     5. store that url link into string. save it into array
 - build and overite the xml to the `slack_devops_channel_rss.xml`
 # deploy
+- dependences: Django, Selenium
 ```
-pip3 install --trusted-host pypi.org --trusted-host files.pythonhosted.org Django
+pip3 install --trusted-host pypi.org --trusted-host files.pythonhosted.org Django Selenium
+python3 server/rss-collector.py
 python3 server/manage.py runserver
 ```
 # API

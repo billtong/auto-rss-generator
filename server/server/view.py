@@ -10,13 +10,12 @@ def get_rss(request):
     password = request.POST['password']
     url = request.POST['url']
     slack_channel_rss(url, email, password, True)
-    '''
     url = request.GET['url']
     email = ""
     password = ""
     is_headless = True
     slack_channel_rss(url, email, password, is_headless)
-
+    '''
     f = open("server/slack_devops_channel_rss.xml", "r")
     str = f.read()
     
