@@ -1,3 +1,5 @@
+import time
+from datetime import datetime
 from datetime import timedelta
 
 from selenium.common.exceptions import NoSuchElementException
@@ -5,8 +7,6 @@ from selenium.common.exceptions import StaleElementReferenceException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-import time
-from datetime import datetime
 
 
 def auto_collect_data(driver):
@@ -28,7 +28,7 @@ def auto_collect_data(driver):
             link = link_dic.get_attribute("href")
             if link in id_list:
                 continue
-            #get id
+            # get id
             id = link.split("=")[1]
             entry_dic["id"] = id
             # get publish time
