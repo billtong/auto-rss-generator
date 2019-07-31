@@ -8,8 +8,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 def auto_login(driver, email, pwd):
     print("start signin")
-    login_btn = driver.find_element_by_id("enterprise_member_guest_account_signin_link")
-    login_btn.click()
     email_input = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.NAME, "loginfmt"))
     )
@@ -22,7 +20,7 @@ def auto_login(driver, email, pwd):
     password_input.send_keys(pwd)
     sign_in_btn = driver.find_element_by_id("submitButton")
     sign_in_btn.click()
-    confirm_btn = WebDriverWait(driver, 10).until(
+    confirm_btn = WebDriverWait(driver, 15).until(
         EC.presence_of_element_located((By.ID, "idSIButton9"))
     )
     confirm_btn.click()

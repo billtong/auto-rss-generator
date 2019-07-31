@@ -1,5 +1,5 @@
 from xml.etree import ElementTree
-from datetime import datetime
+
 
 def auto_generate_xml(entry_dic_list):
     ElementTree.register_namespace("", "http://www.w3.org/2005/Atom")
@@ -26,4 +26,4 @@ def auto_generate_xml(entry_dic_list):
         id_tag.text = entry_dic["id"]
         publish_tag = ElementTree.SubElement(new_entry, "published")
         publish_tag.text = entry_dic["published"]
-    et.write("server/slack_devops_channel_rss.xml", encoding='utf-8', xml_declaration=True)
+    et.write("server/final_rss.xml", encoding='utf-8', xml_declaration=True)

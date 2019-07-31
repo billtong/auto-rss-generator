@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Notification Channel</title>
-    <link rel="alternate" type="text/html" href="https://app.slack.com/client/TBKNBP9UJ/CC6NQTXEZ" />
+    <link rel="alternate" type="text/html" href="https://app.slack.com/client/TBKNBP9UJ/CC6NQTXEZ"/>
     <author>
         <name>ceadevops</name>
     </author>
