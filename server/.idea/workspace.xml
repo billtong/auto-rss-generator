@@ -1,33 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8dcf8442-6ccb-4d06-8837-ac0b03cbffe2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/server.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/rss_service/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/yammer_service/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/yammer_service/collect.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/yammer_service/login.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/yammer_service/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/yammer_service/web_driver.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_yammer_rss.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/rss_template.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/rss_template.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/slack_service/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/slack_service/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/slack_service/collect.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/slack_service/collect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/slack_service/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/slack_service/login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/slack_service/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/slack_service/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/slack_service/web_driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/slack_service/web_driver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/slack_service/xml_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/rss_service/xml_builder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_slack_rss.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_slack_rss.py" afterDir="false" />
-    </list>
+    <list default="true" id="8dcf8442-6ccb-4d06-8837-ac0b03cbffe2" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

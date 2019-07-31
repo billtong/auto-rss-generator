@@ -1,12 +1,13 @@
+import operator
+
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
+from server.rss_service.xml_builder import auto_generate_xml
 from server.slack_service.main import slack_channel_rss
 from server.slack_service.web_driver import SLACK_WEB_DRIVER
-from server.yammer_service.web_driver import YAMMER_WEB_DRIVER
 from server.yammer_service.main import yammer_group_rss
-from server.rss_service.xml_builder import auto_generate_xml
-import operator
+from server.yammer_service.web_driver import YAMMER_WEB_DRIVER
 
 
 @csrf_exempt

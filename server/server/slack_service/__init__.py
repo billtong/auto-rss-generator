@@ -3,8 +3,8 @@ __all__ = [
     'SingletonWebDriver'
 ]
 
+from server.rss_service.xml_builder import *
 from server.slack_service.collect import *
 from server.slack_service.login import *
 from server.slack_service.main import *
 from server.slack_service.web_driver import *
-from server.rss_service.xml_builder import *
