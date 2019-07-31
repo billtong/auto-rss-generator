@@ -11,20 +11,18 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import StaleElementReferenceException
 from xml.etree import ElementTree
-import time
 
 def slack_rss_feed():
     webdriver_path = "server/webdriver/geckodriver"
     options = Options()
-    options.headless = False
+    options.headless = True
     driver = webdriver.Firefox(options=options, executable_path=webdriver_path)
     email = "tongzhi@mfcgd.com"
     password = "$$Bill990226"
-    url = "https://app.slack.com/client/TBKNBP9UJ/CLHLX1G3S"
+    url = "https://app.slack.com/client/TBKNBP9UJ/CC6NQTXEZ"
     driver.get(url)
     auto_login(driver, email, password)
-    while True:
-        slack_channel_rss(url, email, password, driver)
+    slack_channel_rss(url, driver)
     driver.close()
 if __name__ == '__main__':
     slack_rss_feed()

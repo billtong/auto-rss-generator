@@ -1,22 +1,15 @@
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from server.slack_service import slack_channel_rss
+from server.slack_service.main import slack_channel_rss
+from server.slack_service.web_driver import SLACK_WEB_DRIVER
 
 @csrf_exempt
 def get_rss(request):
-    
-    '''
-    email = request.POST['email']
-    password = request.POST['password']
-    url = request.POST['url']
-    slack_channel_rss(url, email, password, True)
+    driver = SLACK_WEB_DRIVER.get_driver()
     url = request.GET['url']
-    email = ""
-    password = ""
-    is_headless = True
-    slack_channel_rss(url, email, password, is_headless)
-    '''
+    slack_channel_rss(url, driver)
     f = open("server/slack_devops_channel_rss.xml", "r")
     str = f.read()
-    
-    return HttpResponse(str)
+    resp = HttpResponse(str)
+    resp["content-type"] = "text/xml"
+    return resp
