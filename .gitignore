@@ -8,3 +8,5 @@ slack_devops_channel_rss.xml
 geckodriver.log
 *.pyc
 server/geckodriver.log
+server/server/final_rss.xml
+server/server/.DS_Store
