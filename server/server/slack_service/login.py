@@ -1,5 +1,3 @@
-import time
-
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
@@ -15,8 +13,7 @@ def auto_login(driver, email, pwd):
     )
     email_input.clear()
     email_input.send_keys(email, Keys.RETURN)
-    time.sleep(5)
-    password_input = WebDriverWait(driver, 10).until(
+    password_input = WebDriverWait(driver, 15).until(
         EC.presence_of_element_located((By.ID, "passwordInput"))
     )
     password_input.send_keys(pwd)

@@ -25,7 +25,7 @@ def multi_slack_source_combine(slack_urls):
 
 def final_list_combine():
     config = configparser.ConfigParser()
-    config.read_file(open("server/urls.ini"))
+    config.read_file(open("server/application.ini"))
     slack_urls = config["urls"]["slack"].split(",")
     yammer_urls = config["urls"]["yammer"].split(",")
     slack_list = multi_slack_source_combine(slack_urls)
