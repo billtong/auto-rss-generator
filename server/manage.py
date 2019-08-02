@@ -9,8 +9,6 @@ from server.yammer_service.main import yammer_group_login
 
 
 def main():
-    slack_rss_feed_login()
-    yammer_group_login()
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'server.settings')
     try:
         from django.core.management import execute_from_command_line
@@ -24,4 +22,6 @@ def main():
 
 
 if __name__ == '__main__':
+    slack_rss_feed_login()
+    yammer_group_login()
     main()

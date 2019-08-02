@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 
-def auto_collect_data(driver, acrive_url):
+def auto_collect_data(driver):
     entry_dic_list = []
     id_list = {}
     is_continue = True
@@ -36,14 +36,14 @@ def auto_collect_data(driver, acrive_url):
             id_list[link] = 1
 
             # collect id info
-            uuid = link.split(acrive_url)[1]
+            # sample: https://manulife-canada-cet.slack.com/archives/CGQ4170P3/p1564758437000100
+            uuid = link.split("/")[5]
             timestamp = int(uuid[1:11])
-            entry_dic = {}
-            entry_dic["id"] = uuid
+            entry_dic = {
+                "id": uuid,
+                "link": link
+                         }
             print("add id to list " + uuid)
-
-            # collect link info
-            entry_dic["link"] = link
             print("add link to dict " + link)
 
             # collect publish time info

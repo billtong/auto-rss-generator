@@ -13,8 +13,6 @@ def slack_rss_feed_login():
 
 
 def slack_channel_rss(url_path, driver):
-    channel_str = url_path.split("/")[5]
-    archive_url_path = "https://mjh-cdn-technology.slack.com/archives/" + channel_str + "/"
     driver.get(url_path)
-    entry_dic_list = auto_collect_data(driver, archive_url_path)
+    entry_dic_list = auto_collect_data(driver)
     return entry_dic_list
