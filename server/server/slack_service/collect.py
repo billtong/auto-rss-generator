@@ -42,7 +42,7 @@ def auto_collect_data(driver):
             entry_dic = {
                 "id": uuid,
                 "link": link
-                         }
+            }
             print("add id to list " + uuid)
             print("add link to dict " + link)
 

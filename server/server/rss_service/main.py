@@ -1,10 +1,10 @@
+import configparser
 import operator
 
 from server.slack_service.main import slack_channel_rss
 from server.slack_service.web_driver import SLACK_WEB_DRIVER
 from server.yammer_service.main import yammer_group_rss
 from server.yammer_service.web_driver import YAMMER_WEB_DRIVER
-import configparser
 
 
 def multi_yammer_source_combine(yammer_urls):
