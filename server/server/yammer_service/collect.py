@@ -18,44 +18,42 @@ def auto_collect_data(driver):
             EC.presence_of_all_elements_located((By.CLASS_NAME, "yj-thread-list-item"))
         )
         for item in thread_list:
-            entry_dic = {}
-            link_item = None
             try:
+                entry_dic = {}
+                link_item = None
                 link_parent_dic = item.find_elements_by_class_name("yj-message-attributes--nowrap")
+                link_dic = link_parent_dic[0].find_element_by_tag_name("a")
+                link = link_dic.get_attribute("href")
+                if link in id_list:
+                    continue
+                id = link.split("=")[1]
+                entry_dic["id"] = id
+                title = link_dic.get_attribute("title")
+                publish_str = title + " 2019"
+                timestamp = time.mktime(time.strptime(publish_str, "%I:%M %p %B %d %Y"))
+                publish_time = datetime.fromtimestamp(timestamp).isoformat()
+                entry_dic["link"] = link
+                id_list["id"] = link
+                print("add link to dict " + link)
+                entry_dic["published"] = publish_time
+                print("add published time to dic" + publish_time)
+                message_body = item.find_element_by_class_name("yj-message-body")
+                title_str = message_body.get_attribute("innerHTML")
+                entry_dic["title"] = title_str
+                # add the item to the list
+                entry_dic_list.append(entry_dic)
+                if len(entry_dic_list) >= 30:
+                    is_continue = False
+                    print("the list is oversize, end the loop")
+                    break
+                time_now = datetime.now()
+                diff = (datetime.now() - datetime.fromtimestamp(timestamp))
+                if diff > timedelta(days=7):  # two weeks' data
+                    is_continue = False
+                    print("the time is outdated, end the loop")
+                    break
             except (NoSuchElementException, StaleElementReferenceException) as e:
                 continue
-            link_dic = link_parent_dic[0].find_element_by_tag_name("a")
-            link = link_dic.get_attribute("href")
-            if link in id_list:
-                continue
-            # get id
-            id = link.split("=")[1]
-            entry_dic["id"] = id
-            # get publish time
-            title = link_dic.get_attribute("title")
-            publish_str = title + " 2019"
-            timestamp = time.mktime(time.strptime(publish_str, "%I:%M %p %B %d %Y"))
-            publish_time = datetime.fromtimestamp(timestamp).isoformat()
-            entry_dic["link"] = link
-            id_list["id"] = link
-            print("add link to dict " + link)
-            entry_dic["published"] = publish_time
-            print("add published time to dic" + publish_time)
-            message_body = item.find_element_by_class_name("yj-message-body")
-            title_str = message_body.get_attribute("innerHTML")
-            entry_dic["title"] = title_str
-            # add the item to the list
-            entry_dic_list.append(entry_dic)
-            if len(entry_dic_list) >= 30:
-                is_continue = False
-                print("the list is oversize, end the loop")
-                break
-            time_now = datetime.now()
-            diff = (datetime.now() - datetime.fromtimestamp(timestamp))
-            if diff > timedelta(days=7):  # two weeks' data
-                is_continue = False
-                print("the time is outdated, end the loop")
-                break
         try:
             scroll_view = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.CLASS_NAME, "main-content-container"))
