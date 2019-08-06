@@ -1,5 +1,5 @@
 __all__ = [
-    'YAMMER_WEB_DRIVER', 'auto_collect_data', 'yammer_group_rss'
+    'YAMMER_WEB_DRIVER', 'auto_collect_data', 'yammer_group_rss', 'yammer_group_login'
 ]
 
 from server.yammer_service.collect import *

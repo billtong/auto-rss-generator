@@ -22,6 +22,4 @@ def main():
 
 
 if __name__ == '__main__':
-    slack_rss_feed_login()
-    yammer_group_login()
     main()

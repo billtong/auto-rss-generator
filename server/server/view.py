@@ -7,8 +7,6 @@ from server.rss_service.xml_builder import auto_generate_xml
 
 @csrf_exempt
 def get_rss(request):
-    final_list = final_list_combine()
-    auto_generate_xml(final_list)
     f = open("server/final_rss.xml", "r")
     resp = HttpResponse(f.read())
     resp["content-type"] = "text/xml"
