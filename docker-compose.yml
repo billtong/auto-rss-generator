@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  selenium-test:
+    build: .
+    ports:
+      - "4444:4444"
+    container_name: selenium-test

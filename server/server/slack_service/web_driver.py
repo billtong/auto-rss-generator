@@ -1,12 +1,17 @@
 from selenium import webdriver
+# from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options
-
 
 def driver_init():
     webdriver_path = "server/webdriver/geckodriver"
     options = Options()
-    options.headless = True
+    options.headless = False
     driver = webdriver.Firefox(options=options, executable_path=webdriver_path)
+
+    # webdriver_path = "server/webdriver/chromedriver"
+    # options.add_argument("--headless")
+    # driver = webdriver.Chrome(chrome_options=options, executable_path=webdriver_path);
+
     return driver
 
 
