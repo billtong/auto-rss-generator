@@ -1,17 +1,26 @@
 from selenium import webdriver
 # from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
+from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
+
 
 def driver_init():
     webdriver_path = "server/webdriver/geckodriver"
+    profile = FirefoxProfile()
+    profile.assume_untrusted_cert_issuer = True
+    profile.accept_untrusted_certs = True
+    capabilities = DesiredCapabilities.FIREFOX.copy()
+    capabilities['acceptInsecureCerts'] = True
+    capabilities['acceptSslCerts'] = True
     options = Options()
     options.headless = False
-    driver = webdriver.Firefox(options=options, executable_path=webdriver_path)
-
+    ff_binary = FirefoxBinary("/Applications/Firefox Nightly.app/Contents/MacOS/firefox-bin")
+    driver = webdriver.Firefox(options=options, executable_path=webdriver_path, firefox_binary=ff_binary, capabilities=capabilities, firefox_profile=profile)
     # webdriver_path = "server/webdriver/chromedriver"
     # options.add_argument("--headless")
     # driver = webdriver.Chrome(chrome_options=options, executable_path=webdriver_path);
-
     return driver
 
 
