@@ -1,5 +1,5 @@
 from selenium import webdriver
-
+from selenium.webdriver.chrome.options import Options
 
 def driver_init():
     # webdriver_path = "server/webdriver/geckodriver"
@@ -15,10 +15,10 @@ def driver_init():
     # driver = webdriver.Firefox(options=options, executable_path=webdriver_path, firefox_binary=ff_binary, capabilities=capabilities, firefox_profile=profile)
 
     webdriver_path = "server/webdriver/chromedriver"
-    # options = Options()
-    # options.add_argument("--headless")
-    # driver = webdriver.Chrome(chrome_options=options, executable_path=webdriver_path);
-    driver = webdriver.Chrome(executable_path=webdriver_path);
+    options = Options()
+    options.add_argument("--headless")
+    driver = webdriver.Chrome(chrome_options=options, executable_path=webdriver_path);
+    # driver = webdriver.Chrome(executable_path=webdriver_path);
     return driver
 
 
