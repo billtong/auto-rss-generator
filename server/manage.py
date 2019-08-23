@@ -4,9 +4,6 @@
 import os
 import sys
 
-from server.slack_service.main import slack_rss_feed_login
-from server.yammer_service.main import yammer_group_login
-
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'server.settings')

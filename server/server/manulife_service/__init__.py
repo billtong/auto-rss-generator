@@ -1,5 +1,5 @@
 __all__ = [
-    'url_login'
+    'basic_auth'
 ]
 
-from server.manulife_service.login import url_login
+from server.manulife_service.login import basic_auth

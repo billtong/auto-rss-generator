@@ -2,7 +2,7 @@ from urllib3 import PoolManager
 
 
 # for all browser
-def url_login(driver, username, pwd):
+def basic_auth(driver, username, pwd):
     print("start sign in")
     url = 'https://mfcentral.manulife.com/login?startURL=%2Fcms__main'
     str_before_flag = '<form id="options"  method="post" action="'

@@ -3,6 +3,5 @@ __all__ = [
 ]
 
 from server.yammer_service.collect import *
-from server.yammer_service.login import *
 from server.yammer_service.main import *
 from server.yammer_service.web_driver import *

@@ -34,5 +34,9 @@ class SingletonWebDriver(object):
     def get_driver(self):
         return self.driver
 
+    def refresh_driver(self):
+        self.driver.close()
+        self.driver = driver_init()
+
 
 SLACK_WEB_DRIVER = SingletonWebDriver()

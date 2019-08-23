@@ -1,21 +1,32 @@
 import configparser
-
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 from server.yammer_service.collect import auto_collect_data
 from server.yammer_service.web_driver import YAMMER_WEB_DRIVER
-from server.manulife_service.login import url_login
-from server.yammer_service.login import auto_login
+from server.manulife_service.login import basic_auth
 
 
-def yammer_group_login():
+def yammer_group_login(is_refresh):
+    if is_refresh:
+        YAMMER_WEB_DRIVER.refresh_driver()
     driver = YAMMER_WEB_DRIVER.get_driver()
     config = configparser.ConfigParser()
     config.read_file(open("server/application.ini"))
+    yammer_index_url = config["index_urls"]["yammer"]
     username = config["auth"]["username"]
     password = config["auth"]["password"]
     email = config["auth"]["email"]
-    url_login(driver, username, password)
-    driver.get("https://www.yammer.com/manulife.com")
-    auto_login(driver, email)
+    basic_auth(driver, username, password)
+    driver.get(yammer_index_url)
+    print("start yammer sign in")
+    email_input = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.NAME, "loginfmt"))
+    )
+    email_input.clear()
+    email_input.send_keys(email, Keys.RETURN)
+    print("finish yammer signin")
 
 
 def yammer_group_rss(url, driver):

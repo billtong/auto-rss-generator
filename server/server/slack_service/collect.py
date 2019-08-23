@@ -20,15 +20,12 @@ def auto_collect_data(driver):
         i = len(c_virtual_list_items) - 1
         while i >= 0:  # from bottom(last) to top(0)
             item = c_virtual_list_items[i]
-
-            link_a_element = None
             try:
                 link_a_element = item.find_element_by_class_name("c-timestamp--static")
+                link = link_a_element.get_attribute("href")
             except (NoSuchElementException, StaleElementReferenceException) as e:
                 i -= 1
                 continue
-            link = link_a_element.get_attribute("href")
-
             # check repeat and add link
             if link in id_list:
                 i -= 1
