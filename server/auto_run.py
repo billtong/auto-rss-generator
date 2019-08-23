@@ -4,7 +4,5 @@ from server.yammer_service import yammer_group_login
 
 slack_rss_feed_login()
 yammer_group_login()
-
-while True:
-    final_list = final_list_combine()
-    auto_generate_xml(final_list)
+final_list = final_list_combine()
+auto_generate_xml(final_list)

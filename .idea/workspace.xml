@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="205c2270-f4e3-408e-9368-5f2eb9ca6bc0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/login_scratch.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/server/manulife_service/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/server/manulife_service/login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/auto_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/auto_run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/login_scratch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server/application.ini" beforeDir="false" afterPath="$PROJECT_DIR$/server/server/application.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server/slack_service/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/server/slack_service/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server/slack_service/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/server/slack_service/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server/slack_service/web_driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/server/slack_service/web_driver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/server/view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server/yammer_service/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/server/yammer_service/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server/yammer_service/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/server/yammer_service/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +55,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.login_scratch">
+  <component name="RunManager" selected="Python.auto_run">
     <configuration name="auto_run" type="PythonConfigurationType" factoryName="Python" singleton="false" nameIsGenerated="true">
       <module name="rss-collector" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -142,5 +150,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/server/slack_service/login.py</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

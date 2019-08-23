@@ -1,20 +1,21 @@
 import configparser
 
 from server.yammer_service.collect import auto_collect_data
-from server.yammer_service.login import auto_login
 from server.yammer_service.web_driver import YAMMER_WEB_DRIVER
+from server.manulife_service.login import url_login
+from server.yammer_service.login import auto_login
 
 
 def yammer_group_login():
     driver = YAMMER_WEB_DRIVER.get_driver()
-    url = "https://www.yammer.com/manulife.com/#/threads/inGroup?type=in_group&feedId=12449608"
-    driver.get(url)
     config = configparser.ConfigParser()
     config.read_file(open("server/application.ini"))
-    email = config["auth"]["email"]
+    username = config["auth"]["username"]
     password = config["auth"]["password"]
-    driver.get(url)
-    auto_login(driver, email, password)
+    email = config["auth"]["email"]
+    url_login(driver, username, password)
+    driver.get("https://www.yammer.com/manulife.com")
+    auto_login(driver, email)
 
 
 def yammer_group_rss(url, driver):
