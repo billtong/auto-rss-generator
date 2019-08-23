@@ -1,12 +1,12 @@
 #!/usr/bin/python
 
 import time
+
 from server.rss_service import final_list_combine, auto_generate_xml
 from server.slack_service import slack_rss_feed_login
 from server.yammer_service import yammer_group_login
 
-
-max_loop = 11   # run 11times then update credentials
+max_loop = 11  # run 11times then update credentials
 is_refresh = False
 while True:
     slack_rss_feed_login(is_refresh)
@@ -19,7 +19,6 @@ while True:
             is_refresh = True
             break
         print("start sleep")
-        time.sleep(60*15)   # sleep 15 minutes
+        time.sleep(60 * 15)  # sleep 15 minutes
         print("end sleep")
         count += 1
-

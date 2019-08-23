@@ -1,11 +1,13 @@
 import configparser
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+
+from server.manulife_service.login import basic_auth
 from server.yammer_service.collect import auto_collect_data
 from server.yammer_service.web_driver import YAMMER_WEB_DRIVER
-from server.manulife_service.login import basic_auth
 
 
 def yammer_group_login(is_refresh):
