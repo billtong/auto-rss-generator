@@ -1,8 +1,8 @@
 version: "3"
 
 services:
-  selenium-test:
-    build: .
+  selenium-chrome:
+    image: selenium/standalone-chrome
     ports:
       - "4444:4444"
-    container_name: selenium-test
+    container_name: chrome

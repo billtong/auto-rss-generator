@@ -6,6 +6,7 @@ from selenium.common.exceptions import StaleElementReferenceException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from server.webdriver.web_driver import WEB_DRIVER_WAIT_TTL
 
 
 def auto_collect_data(driver):
@@ -14,7 +15,7 @@ def auto_collect_data(driver):
     is_continue = True
     while is_continue:
         c_virtual_list_items = []
-        c_virtual_list_items = WebDriverWait(driver, 10).until(
+        c_virtual_list_items = WebDriverWait(driver, WEB_DRIVER_WAIT_TTL).until(
             EC.presence_of_all_elements_located((By.CLASS_NAME, "c-virtual_list__item"))
         )
         i = len(c_virtual_list_items) - 1
@@ -87,7 +88,7 @@ def auto_collect_data(driver):
         # scrolling up
 
         scroll_view = []
-        scroll_view = WebDriverWait(driver, 15).until(
+        scroll_view = WebDriverWait(driver, WEB_DRIVER_WAIT_TTL).until(
             EC.presence_of_all_elements_located((By.CLASS_NAME, "c-scrollbar__hider"))
         )
         scroll_top_value = int(scroll_view[1].get_attribute("scrollTop"))

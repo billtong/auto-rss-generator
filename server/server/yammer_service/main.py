@@ -7,7 +7,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 from server.manulife_service.login import basic_auth
 from server.yammer_service.collect import auto_collect_data
-from server.yammer_service.web_driver import YAMMER_WEB_DRIVER
+from server.webdriver.web_driver import YAMMER_WEB_DRIVER
+from server.webdriver.web_driver import WEB_DRIVER_WAIT_TTL
 
 
 def yammer_group_login(is_refresh):
@@ -23,7 +24,7 @@ def yammer_group_login(is_refresh):
     basic_auth(driver, username, password)
     driver.get(yammer_index_url)
     print("start yammer sign in")
-    email_input = WebDriverWait(driver, 10).until(
+    email_input = WebDriverWait(driver, WEB_DRIVER_WAIT_TTL).until(
         EC.presence_of_element_located((By.NAME, "loginfmt"))
     )
     email_input.clear()

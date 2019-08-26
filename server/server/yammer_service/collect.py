@@ -7,6 +7,7 @@ from selenium.common.exceptions import StaleElementReferenceException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from server.webdriver.web_driver import WEB_DRIVER_WAIT_TTL
 
 
 def auto_collect_data(driver):
@@ -14,7 +15,7 @@ def auto_collect_data(driver):
     id_list = {}
     is_continue = True
     while is_continue:
-        thread_list = WebDriverWait(driver, 10).until(
+        thread_list = WebDriverWait(driver, WEB_DRIVER_WAIT_TTL).until(
             EC.presence_of_all_elements_located((By.CLASS_NAME, "yj-thread-list-item"))
         )
         for item in thread_list:
@@ -55,7 +56,7 @@ def auto_collect_data(driver):
             except (NoSuchElementException, StaleElementReferenceException) as e:
                 continue
         try:
-            scroll_view = WebDriverWait(driver, 10).until(
+            scroll_view = WebDriverWait(driver, WEB_DRIVER_WAIT_TTL).until(
                 EC.presence_of_element_located((By.CLASS_NAME, "main-content-container"))
             )
             scroll_top_value = int(scroll_view.get_attribute("scrollTop"))

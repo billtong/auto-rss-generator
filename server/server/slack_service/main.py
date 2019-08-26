@@ -7,7 +7,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 from server.manulife_service.login import basic_auth
 from server.slack_service.collect import auto_collect_data
-from server.slack_service.web_driver import SLACK_WEB_DRIVER
+from server.webdriver.web_driver import SLACK_WEB_DRIVER
+from server.webdriver.web_driver import WEB_DRIVER_WAIT_TTL
 
 
 def slack_rss_feed_login(is_refresh):
@@ -25,7 +26,7 @@ def slack_rss_feed_login(is_refresh):
     driver.get(slack_index_url)
     login_btn = driver.find_element_by_id("enterprise_member_guest_account_signin_link")
     login_btn.click()
-    email_input = WebDriverWait(driver, 10).until(
+    email_input = WebDriverWait(driver, WEB_DRIVER_WAIT_TTL).until(
         EC.presence_of_element_located((By.NAME, "loginfmt"))
     )
     email_input.clear()
