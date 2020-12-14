@@ -34,7 +34,7 @@ def auto_collect_data(driver):
             id_list[link] = 1
 
             # collect id info
-            # sample: https://manulife-canada-cet.slack.com/archives/CGQ4170P3/p1564758437000100
+            # sample: https://XXXXXX-canada-cet.slack.com/archives/CGQ4170P3/p1564758437000100
             uuid = link.split("/")[5]
             timestamp = int(uuid[1:11])
             entry_dic = {

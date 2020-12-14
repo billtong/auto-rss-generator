@@ -4,7 +4,7 @@ from urllib3 import PoolManager
 # for all browser
 def basic_auth(driver, username, pwd):
     print("start sign in")
-    url = 'https://mfcentral.manulife.com/login?startURL=%2Fcms__main'
+    url = 'https://mfcentral.XXXXXX.com/login?startURL=%2Fcms__main'
     str_before_flag = '<form id="options"  method="post" action="'
     str_after_flag = '">\r\n            <script type="text/javascript">\r\n'
     http = PoolManager()
